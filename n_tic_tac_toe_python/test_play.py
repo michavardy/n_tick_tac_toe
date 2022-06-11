@@ -25,20 +25,21 @@ class TestPlay(unittest.TestCase):
         self.assertEqual(1+1, 2, '1+1 = 2')
 
     def test_overwrite(self):
-        #setup
-        ttt = TTT(2,3)
-        ttt.board = [['x','o','x'],['x','x','o'],['o','x','x']]
+        # setup
+        ttt = TTT(2, 3)
+        ttt.board = [['x', 'o', 'x'], ['x', 'x', 'o'], ['o', 'x', 'x']]
         ttt.player = 2
         old_board = ttt.board
         ttt.update_move('B1')
-        self.assertEqual(ttt.board,old_board)
-    
+        self.assertEqual(ttt.board, old_board)
+
     def test_next_player(self):
-        ttt = TTT(2,3)
-        ttt.board = [['x','o','x'],['x','x','o'],['o','x','x']]
+        ttt = TTT(2, 3)
+        ttt.board = [['x', 'o', 'x'], ['x', 'x', 'o'], ['o', 'x', 'x']]
         ttt.player = 2
         ttt.next_player()
         self.assertEqual(ttt.player, 1)
+
 
 if __name__ == '__main__':
     unittest.main()
